@@ -8,7 +8,7 @@ CREATE TABLE requests (
   id bigint(20) NOT NULL AUTO_INCREMENT,
   till_number int NOT NULL,
   till_request_id bigint(20) default NULL,
-  time_stamp timestamp not null default,
+  time_stamp timestamp not null default CURRENT_TIMESTAMP,
+  done boolean not null,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-alter table requests add done boolean not null;

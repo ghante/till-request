@@ -39,4 +39,13 @@ public class RequestsRepository {
         tillRequestCriteria.addOrder(Order.asc("priority"));
         return criteria.list();
     }
+
+    public List<Request> getDone() {
+        Session session = sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(Request.class);
+        criteria.add(Restrictions.eq("done", true));
+        Criteria tillRequestCriteria = criteria.createCriteria("tillRequest");
+        tillRequestCriteria.addOrder(Order.asc("priority"));
+        return criteria.list();
+    }
 }

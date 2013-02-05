@@ -39,7 +39,9 @@ public class HomeController {
     @RequestMapping(value = "/list")
     public String list(Model model) {
         List<Request> pendingRequests = requestsRepository.getPending();
-        model.addAttribute("requests", pendingRequests);
+        List<Request> doneRequests = requestsRepository.getDone();
+        model.addAttribute("pending", pendingRequests);
+        model.addAttribute("done", doneRequests);
         return "list";
     }
 
