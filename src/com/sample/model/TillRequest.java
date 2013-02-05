@@ -15,8 +15,8 @@ public class TillRequest {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "time_stamp")
-    private Timestamp time_stamp;
+    @Column(name = "priority")
+    private int priority;
 
     public long getId() {
         return id;
@@ -34,11 +34,11 @@ public class TillRequest {
         this.name = name;
     }
 
-    public Timestamp getTime_stamp() {
-        return time_stamp;
+    public int getPriority() {
+        return priority;
     }
 
-    public void setTime_stamp(Timestamp time_stamp) {
-        this.time_stamp = time_stamp;
+    public void setPriority(int priority) {
+        this.priority = priority;
     }
 }
