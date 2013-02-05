@@ -10,7 +10,7 @@
 <div class="heading">
     <form action="home/action" method="post">
         <c:forEach var="request" items="${requests}">
-            <div>${request.tillNumber} : ${request.tillRequest.name} : ${request.tillRequest.priority}</div>
+            <div>${request.tillNumber} : ${request.tillRequest.name} : ${request.tillRequest.priority} : <input type="checkbox" value="${request.id}"/>Done</div>
         </c:forEach>
     </form>
 </div>

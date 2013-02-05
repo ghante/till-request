@@ -5,6 +5,7 @@ import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.classic.Session;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,8 +34,7 @@ public class RequestsRepository {
     public List<Request> getPending() {
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(Request.class);
-//        criteria.createAlias("tillReq", "tillRequest");
-//        criteria.addOrder(Order.asc("tillReq.priority"));
+        criteria.add(Restrictions.eq("done", false));
         Criteria tillRequestCriteria = criteria.createCriteria("tillRequest");
         tillRequestCriteria.addOrder(Order.asc("priority"));
         return criteria.list();

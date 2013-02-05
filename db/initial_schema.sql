@@ -11,3 +11,4 @@ CREATE TABLE requests (
   time_stamp timestamp not null default,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+alter table requests add done boolean not null;

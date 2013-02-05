@@ -21,6 +21,9 @@ public class Request {
     @Column(name = "time_stamp")
     private int time_stamp;
 
+    @Column(name = "done")
+    private boolean done;
+
     public void setTillNumber(int tillNumber) {
         this.tillNumber = tillNumber;
     }
@@ -43,5 +46,21 @@ public class Request {
 
     public void setTillRequest(TillRequest tillRequest) {
         this.tillRequest = tillRequest;
+    }
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
