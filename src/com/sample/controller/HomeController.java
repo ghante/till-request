@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
+
 @Controller
 @RequestMapping(value = "/home")
 public class HomeController {
@@ -29,7 +31,7 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping(value = "action", method = RequestMethod.POST)
+    @RequestMapping(value = "action", method = POST)
     public String action(String req) {
         int tillNumber = 2;
         requestsRepository.add(req, tillNumber);
@@ -43,6 +45,20 @@ public class HomeController {
         model.addAttribute("pending", pendingRequests);
         model.addAttribute("done", doneRequests);
         return "list";
+    }
+
+    @RequestMapping(value = "/done", method = POST)
+    public String done(long requestId) {
+        requestsRepository.done(requestId);
+        System.out.println(requestId);
+        return "redirect:list";
+    }
+
+    @RequestMapping(value = "/undo", method = POST)
+    public String undo(long requestId) {
+        requestsRepository.undo(requestId);
+        System.out.println(requestId);
+        return "redirect:list";
     }
 
 }

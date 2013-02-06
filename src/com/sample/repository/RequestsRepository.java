@@ -48,4 +48,19 @@ public class RequestsRepository {
         tillRequestCriteria.addOrder(Order.asc("priority"));
         return criteria.list();
     }
+
+    public void done(long requestId) {
+        System.out.println(requestId);
+        Session session = sessionFactory.getCurrentSession();
+        Request request = (Request) session.get(Request.class, requestId);
+        request.setDone(true);
+        session.save(request);
+    }
+
+    public void undo(long requestId) {
+        Session session = sessionFactory.getCurrentSession();
+        Request request = (Request) session.get(Request.class, requestId);
+        request.setDone(false);
+        session.save(request);
+    }
 }

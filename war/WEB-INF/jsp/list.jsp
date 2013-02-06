@@ -5,17 +5,27 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="<c:url value="/static/css/home.css" /> "/>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <%--<script type="text/javascript" src="<c:url value="/static/js/supervisor.list.js" />"></script>--%>
 </head>
 <body>
 <div class="heading">
-    <form action="home/action" method="post">
-        <c:forEach var="request" items="${pending}">
-            <div>${request.tillNumber} : ${request.tillRequest.name} : ${request.tillRequest.priority} : <input type="checkbox" value="${request.id}"/>Done</div>
-        </c:forEach>
-        <div class="padding-20"></div>
-        <c:forEach var="request" items="${done}">
-            <div>${request.tillNumber} : ${request.tillRequest.name} : ${request.tillRequest.priority} : <input type="checkbox" value="${request.id}"/>Undo</div>
-        </c:forEach>
-    </form>
+    <c:forEach var="request" items="${pending}">
+        <form action="<c:url value="/home/done"/>" method="post">
+            <input type="hidden" value="${request.id}" name="requestId"/>
+
+            <div>${request.tillNumber} : ${request.tillRequest.name} : ${request.tillRequest.priority} : <input
+                    type="submit" value="Done" name="done-button"/></div>
+        </form>
+    </c:forEach>
+    <div class="padding-20"></div>
+    <c:forEach var="request" items="${done}">
+        <form action="<c:url value="/home/undo"/>" method="post">
+            <input type="hidden" value="${request.id}" name="requestId"/>
+            <div>${request.tillNumber} : ${request.tillRequest.name} : ${request.tillRequest.priority} : <input
+                    type="submit" value="Undo"/>
+            </div>
+        </form>
+    </c:forEach>
 </div>
 </body>
