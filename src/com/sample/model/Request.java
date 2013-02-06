@@ -1,6 +1,7 @@
 package com.sample.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "requests")
@@ -19,7 +20,7 @@ public class Request {
     private int tillNumber;
 
     @Column(name = "time_stamp")
-    private int time_stamp;
+    private Date timeStamp;
 
     @Column(name = "done")
     private boolean done;
@@ -32,12 +33,12 @@ public class Request {
         return tillNumber;
     }
 
-    public int getTime_stamp() {
-        return time_stamp;
+    public Date getTimeStamp() {
+        return timeStamp;
     }
 
-    public void setTime_stamp(int time_stamp) {
-        this.time_stamp = time_stamp;
+    public void setTimeStamp(Date timeStamp) {
+        this.timeStamp = timeStamp;
     }
 
     public TillRequest getTillRequest() {
