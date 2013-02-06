@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="<c:url value="/static/css/home.css" /> "/>
 </head>
 <body>
-<div class="heading">
+<div class="heading sixteen columns">
     <form action="home/action" method="post">
         <c:forEach var="request" items="${requests}">
             <div><input class="request" type="submit" value="${request.name}" name="req"></div>
