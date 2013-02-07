@@ -39,6 +39,10 @@
     <img src="http://www.morrisons.co.uk/graphics/morrisonsLogo.jpg" alt="" style="padding-top: 5px;"/>
 </div>
 
+<div style="width: 100%; height:50px; background: white; text-align: center;">
+    <a style="padding-top: 5px; font-size: 3em" href="#">Refresh</a>
+</div>
+
 <div class="padding-page">
     <div class="background page-padding">
         <c:forEach var="request" items="${pending}">
