@@ -7,8 +7,10 @@ import com.sample.repository.TillRequestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import java.util.List;
 
@@ -16,6 +18,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
 @RequestMapping(value = "/home")
+@SessionAttributes({"tillNumber"})
 public class HomeController {
 
     @Autowired
@@ -31,10 +34,21 @@ public class HomeController {
         return "index";
     }
 
+    @RequestMapping(value = "login")
+    public String login() {
+        return "login";
+    }
+
+    @RequestMapping(value = "login", method = POST)
+    public String login(int tillNumber, Model model) {
+        model.addAttribute("tillNumber", tillNumber);
+        return "redirect:index";
+    }
+
     @RequestMapping(value = "action", method = POST)
-    public String action(String req) {
-        int tillNumber = 2;
+    public String action(@ModelAttribute("tillNumber") int tillNumber, String req, Model model) {
         requestsRepository.add(req, tillNumber);
+        model.addAttribute("requestSent", true);
         return "redirect:index";
     }
 

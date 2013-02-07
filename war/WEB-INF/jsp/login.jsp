@@ -7,30 +7,26 @@
     <link rel="stylesheet" type="text/css" href="<c:url value="/static/css/home.css" /> "/>
     <link rel="stylesheet" type="text/css" href="<c:url value="/static/css/skeleton.css" /> "/>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#confirmation-msg').fadeOut(1000);
-        });
-    </script>
+
 </head>
 <body>
 <div style="width: 100%; height:50px; background: white; text-align: center;">
     <img src="http://www.morrisons.co.uk/graphics/morrisonsLogo.jpg" alt="" style="padding-top: 5px;"/>
 </div>
-<div class="confirmation-msg">
-    <span>&nbsp;</span>
-    <c:if test="${param.requestSent}">
-        <span id="confirmation-msg">Your request has been sent.</span>
-    </c:if>
-</div>
+<%--<div id="confirmation-msg" class="confirmation-msg">--%>
+  <%--Your request has been sent.--%>
+<%--</div>--%>
 <div class="padding-page">
 <div class="background page-padding">
-    <form action="<c:url value="/home/action"/>" method="post">
-        <c:forEach var="request" items="${requests}">
+    <form action="<c:url value="/home/login"/>" method="post">
             <div class="row sixteen columns">
-                <input class="request" type="submit" value="${request.name}" name="req" onclick="">
+                <label style="font-size: 2.5em;">
+                    Till Number : <input type="text" name="tillNumber"/>
+                </label>
             </div>
-        </c:forEach>
+        <div>
+            <input type="submit" value="Log In" class="request">
+        </div>
     </form>
 </div>
 </div>

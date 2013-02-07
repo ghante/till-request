@@ -41,7 +41,6 @@
 
 <div class="refresh">
     <img id="refresh-button" src="<c:url value="/static/images/refresh.png" /> " alt="">
-    <%--<a style="padding-top: 5px; font-size: 3em" href="">Refresh</a>--%>
 </div>
 
 <div class="padding-page">
@@ -59,7 +58,11 @@
                 <div class="" style="width: 29%; float: left;">
                     <form action="<c:url value="/home/done"/>" method="post">
                         <input type="hidden" value="${request.id}" name="requestId"/>
-                        <div class="request action-button" style="text-align: center"><span>Done</span></div>
+                        <div class="request action-button" style="text-align: center">
+                            <div style="padding-top: 25px;">
+                                <span>Done</span>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -82,7 +85,11 @@
                 <div class="" style="width: 29%; float: left;">
                     <form action="<c:url value="/home/undo"/>" method="post">
                         <input type="hidden" value="${request.id}" name="requestId"/>
-                        <div class="request action-button" style="text-align: center"><span>Undo</span></div>
+                        <div class="request action-button" style="text-align: center">
+                            <div style="padding-top: 25px;">
+                                <span>Undo</span>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
