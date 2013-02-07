@@ -24,7 +24,7 @@ public class HomeController {
     @Autowired
     RequestsRepository requestsRepository;
 
-    @RequestMapping
+    @RequestMapping(value = "index")
     public String index(Model model) {
         List<TillRequest> requests = tillRequestRepository.getAll();
         model.addAttribute("requests", requests);
@@ -35,7 +35,7 @@ public class HomeController {
     public String action(String req) {
         int tillNumber = 2;
         requestsRepository.add(req, tillNumber);
-        return "index";
+        return "redirect:index";
     }
 
     @RequestMapping(value = "/list")

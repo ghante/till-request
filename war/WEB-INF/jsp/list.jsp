@@ -5,27 +5,77 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="<c:url value="/static/css/home.css" /> "/>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/static/css/skeleton.css" /> "/>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <%--<script type="text/javascript" src="<c:url value="/static/js/supervisor.list.js" />"></script>--%>
 </head>
-<body>
-<div class="heading">
-    <c:forEach var="request" items="${pending}">
-        <form action="<c:url value="/home/done"/>" method="post">
-            <input type="hidden" value="${request.id}" name="requestId"/>
+<body class="container">
+<%--<table class="sixteen columns background-done">--%>
+<%--<thead>--%>
+<%--<tr>--%>
+<%--<th class="three columns">Till Number</th>--%>
+<%--<th class="four columns">Request</th>--%>
+<%--<th class="four columns">Time</th>--%>
+<%--<th class="three columns">Done</th>--%>
+<%--</tr>--%>
+<%--</thead>--%>
+<%--<tbody>--%>
+<%--<c:forEach var="request" items="${pending}">--%>
+<%--<tr>--%>
+<%--<td class="three columns item">${request.tillNumber}</td>--%>
+<%--<td class="four columns">${request.tillRequest.name}</td>--%>
+<%--<td class="four columns">${request.timeStamp}</td>--%>
+<%--<td class="three columns">--%>
+<%--<form action="<c:url value="/home/done"/>" method="post">--%>
+<%--<input type="hidden" value="${request.id}" name="requestId"/>--%>
+<%--<input type="submit" value="Done" name="done-button"/>--%>
+<%--</form>--%>
+<%--</td>--%>
+<%--</tr>--%>
+<%--</c:forEach>--%>
+<%--</tbody>--%>
+<%--</table>--%>
 
-            <div>${request.tillNumber} : ${request.tillRequest.name} : ${request.tillRequest.priority} : <input
-                    type="submit" value="Done" name="done-button"/></div>
-        </form>
-    </c:forEach>
-    <div class="padding-20"></div>
-    <c:forEach var="request" items="${done}">
-        <form action="<c:url value="/home/undo"/>" method="post">
-            <input type="hidden" value="${request.id}" name="requestId"/>
-            <div>${request.tillNumber} : ${request.tillRequest.name} : ${request.tillRequest.priority} : <input
-                    type="submit" value="Undo"/>
+<div style="margin-left: 10%">
+    <c:forEach var="request" items="${pending}">
+        <div class="row sixteen columns">
+            <div class="seven columns" style="font-size: 3em;">
+                    <div>${request.tillRequest.name}</div>
+                    <div>Till Number : ${request.tillNumber}</div>
+                    <div>${request.timeStamp}</div>
             </div>
-        </form>
+            <div class="seven columns">
+                <form action="<c:url value="/home/done"/>" method="post">
+                    <input type="hidden" value="${request.id}" name="requestId"/>
+                    <div><span style="width: 100%; height: 100%; background-color: red;">Done</span></div>
+                </form>
+            </div>
+        </div>
+    </c:forEach>
+</div>
+<%--<div class="row sixteen columns">--%>
+<%--<form action="<c:url value="/home/done"/>" method="post">--%>
+<%--<input type="hidden" value="${request.id}" name="requestId"/>--%>
+<%--${request.tillNumber}--%>
+<%--${request.tillRequest.name}--%>
+<%--${request.timeStamp}--%>
+<%--<input type="submit" value="Done" name="done-button"--%>
+<%--class="action"/>--%>
+<%--</form>--%>
+<%--</div>--%>
+
+<div class="padding-20"></div>
+<div class="background-undo">
+    <c:forEach var="request" items="${done}">
+        <div class="row sixteen columns">
+            <form action="<c:url value="/home/undo"/>" method="post">
+                <input type="hidden" value="${request.id}" name="requestId"/>
+
+                <div>${request.tillNumber} : ${request.tillRequest.name} : ${request.timeStamp} : <input
+                        type="submit" value="Undo" class="action"/>
+                </div>
+            </form>
+        </div>
     </c:forEach>
 </div>
 </body>
