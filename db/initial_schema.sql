@@ -12,3 +12,8 @@ CREATE TABLE requests (
   done boolean not null,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+insert into till_requests(name, priority) values ('Age Verify',1);
+insert into till_requests(name, priority) values ('TV License',2);
+insert into till_requests(name, priority) values ('Spillage',3);
+insert into till_requests(name, priority) values ('Change',3);
+insert into till_requests(name, priority) values ('Toilet Break',4);

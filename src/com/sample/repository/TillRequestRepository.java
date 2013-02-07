@@ -19,13 +19,6 @@ public class TillRequestRepository {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public void add(String req) {
-        Session session = sessionFactory.getCurrentSession();
-        TillRequest tillRequest = new TillRequest();
-        tillRequest.setName(req);
-        session.save(tillRequest);
-    }
-
     public List<TillRequest> getAll() {
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(TillRequest.class);
