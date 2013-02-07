@@ -1,6 +1,7 @@
 package com.sample.model;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -63,5 +64,9 @@ public class Request {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getTime() {
+        return new SimpleDateFormat("h:mm a, E, MMM d").format(timeStamp);
     }
 }

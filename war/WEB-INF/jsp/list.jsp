@@ -45,13 +45,16 @@
 </div>
 
 <div class="padding-page">
+    <div class="title" style="clear: both; display: block;">
+        Pending
+    </div>
     <div class="background page-padding">
         <c:forEach var="request" items="${pending}">
             <div class="row sixteen columns" style="border-bottom: 1px solid;">
-                <div class="" style="font-size: 3em; width: 70%; float: left;">
-                    <div>${request.tillRequest.name}</div>
-                    <div>Till Number : ${request.tillNumber}</div>
-                    <div>${request.timeStamp}</div>
+                <div class="" style="width: 70%; float: left;">
+                    <div style="font-size: 3em;">${request.tillRequest.name}</div>
+                    <div style="font-size: 1.5em;">Till Number : ${request.tillNumber}</div>
+                    <div style="font-size: 1.5em;">${request.time}</div>
                 </div>
                 <div class="" style="width: 29%; float: left;">
                     <form action="<c:url value="/home/done"/>" method="post">
@@ -65,13 +68,16 @@
 </div>
 
 <div class="padding-page">
+    <div class="title" style="clear: both; display: block;">
+        Complete
+    </div>
     <div class="background page-padding">
         <c:forEach var="request" items="${done}">
             <div class="row sixteen columns" style="border-bottom: 1px solid;">
-                <div class="" style="font-size: 3em; width: 70%; float: left;">
-                    <div>${request.tillRequest.name}</div>
-                    <div>Till Number : ${request.tillNumber}</div>
-                    <div>${request.timeStamp}</div>
+                <div class="" style="width: 70%; float: left;">
+                    <div style="font-size: 3em;">${request.tillRequest.name}</div>
+                    <div style="font-size: 1.5em; ">Till Number : ${request.tillNumber}</div>
+                    <div style="font-size: 1.5em; ">${request.time}</div>
                 </div>
                 <div class="" style="width: 29%; float: left;">
                     <form action="<c:url value="/home/undo"/>" method="post">
