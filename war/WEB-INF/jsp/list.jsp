@@ -43,6 +43,12 @@
     <img id="refresh-button" src="<c:url value="/static/images/refresh.png" /> " alt="">
 </div>
 
+<div class="refresh" style="padding: 20px;">
+    <span style="font-family: sans-serif; font-size: 2em;">Filter By : </span>
+    <span class="request sort-by" style="padding: 10px;">Request</span>
+    <span class="request sort-by" style="padding: 10px;margin-left: 20px;">Till Number</span>
+</div>
+
 <div class="padding-page">
     <div class="title" style="clear: both; display: block;">
         Pending

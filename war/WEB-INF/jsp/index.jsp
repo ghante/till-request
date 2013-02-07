@@ -9,7 +9,7 @@
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#confirmation-msg').fadeOut(1000);
+            $('#confirmation-msg').fadeOut(2500);
         });
     </script>
 </head>
