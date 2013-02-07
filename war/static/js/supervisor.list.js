@@ -4,5 +4,9 @@ $(document).ready(function(){
             $(this).parent().submit();
         })
     });
+
+    $("#refresh-button").unbind('click').click(function() {
+        window.location.reload();
+    });
 //    $($('.done-button')[0]).parent().submit()
 });

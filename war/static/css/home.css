@@ -40,7 +40,12 @@ body {
     border-radius: 5px;
 }
 
-
+.refresh{
+    width: 100%;
+    height:50px;
+    background: white;
+    text-align: center;
+}
 
 
 .page-padding {

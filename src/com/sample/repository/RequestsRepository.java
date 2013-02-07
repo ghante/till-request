@@ -46,6 +46,7 @@ public class RequestsRepository {
         Criteria criteria = session.createCriteria(Request.class);
         criteria.add(Restrictions.eq("done", true));
         criteria.addOrder(Order.desc("timeStamp"));
+        criteria.setMaxResults(5);
         return criteria.list();
     }
 
