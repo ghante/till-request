@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="<c:url value="/static/css/skeleton.css" /> "/>
 </head>
 <body>
+<div style="width: 100%; height:50px; background: white; text-align: center;">
+    <img src="http://www.morrisons.co.uk/graphics/morrisonsLogo.jpg" alt="" style="padding-top: 5px;"/>
+</div>
 <div class="padding-page">
 <div class="background page-padding">
     <form action="<c:url value="/home/action"/>" method="post">

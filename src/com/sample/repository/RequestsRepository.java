@@ -45,8 +45,7 @@ public class RequestsRepository {
         Session session = sessionFactory.getCurrentSession();
         Criteria criteria = session.createCriteria(Request.class);
         criteria.add(Restrictions.eq("done", true));
-        Criteria tillRequestCriteria = criteria.createCriteria("tillRequest");
-        tillRequestCriteria.addOrder(Order.asc("priority"));
+        criteria.addOrder(Order.desc("timeStamp"));
         return criteria.list();
     }
 

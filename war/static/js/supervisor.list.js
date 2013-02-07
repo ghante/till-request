@@ -1,7 +1,8 @@
 $(document).ready(function(){
-    $('input[name="done-button"]').unbind('click').click(function(){
-        $.post('done', function(){
-            alert('success');
+    $('.action-button').each(function() {
+        $(this).unbind('click').click(function() {
+            $(this).parent().submit();
         })
     });
+//    $($('.done-button')[0]).parent().submit()
 });
