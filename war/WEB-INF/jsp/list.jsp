@@ -40,7 +40,7 @@
 </div>
 
 <div style="width: 100%; height:50px; background: white; text-align: center;">
-    <a style="padding-top: 5px; font-size: 3em" href="#">Refresh</a>
+    <a style="padding-top: 5px; font-size: 3em" href="">Refresh</a>
 </div>
 
 <div class="padding-page">
