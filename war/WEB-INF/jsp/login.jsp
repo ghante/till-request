@@ -20,8 +20,8 @@
 <div class="background page-padding">
     <form action="<c:url value="/home/login"/>" method="post">
             <div class="row sixteen columns">
-                <label style="font-size: 2.5em;">
-                    Till Number : <input type="text" name="tillNumber"/>
+                <label>
+                    <span style="font-size: 2.5em;">Till Number :</span> <input type="text" name="tillNumber" style="font-size: 2.5em;"/>
                 </label>
             </div>
         <div>

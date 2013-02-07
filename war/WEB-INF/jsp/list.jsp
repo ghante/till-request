@@ -40,7 +40,7 @@
 </div>
 
 <div class="refresh">
-    <img id="refresh-button" src="<c:url value="/static/images/refresh.png" /> " alt="">
+    <img id="refresh-button" src="<c:url value="/static/images/refresh.png" />" width="128px" height="128px" alt="">
 </div>
 
 <div class="refresh" style="padding: 20px;">
