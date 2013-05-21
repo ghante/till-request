@@ -6,7 +6,8 @@
 <head>
     <link rel="stylesheet" type="text/css" href="<c:url value="/static/css/home.css" /> "/>
     <link rel="stylesheet" type="text/css" href="<c:url value="/static/css/skeleton.css" /> "/>
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <%--<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>--%>
+    <script type="text/javascript" src="<c:url value="/static/js/jquery-1.9.1.min.js" />"></script>
     <script type="text/javascript" src="<c:url value="/static/js/supervisor.list.js" />"></script>
 </head>
 <body style="background-color: white;">
@@ -36,7 +37,7 @@
 <%--</tbody>--%>
 <%--</table>--%>
 <div style="width: 100%; height:50px; background: white; text-align: center;">
-    <img src="http://www.morrisons.co.uk/graphics/morrisonsLogo.jpg" alt="" style="padding-top: 5px;"/>
+    <img src="<c:url value="/static/images/morrisonsLogo.jpg" />" alt="" style="padding-top: 5px;"/>
 </div>
 
 <div class="refresh">
